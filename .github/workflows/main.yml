@@ -1,0 +1,29 @@
+name: Java Build and Run
+
+on: [push]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11' # Specify the desired Java version
+    
+    - name: Build and Run Java Programs
+      run: |
+        javac -cp ./target/classes Bank_admin_menu.java
+        java -cp ./target/classes Bank_admin_menu
+
+        javac -cp ./target/classes Exception_handle.java
+        java -cp ./target/classes Exception_handle
+
+        javac -cp ./target/classes Mark.java
+        java -cp ./target/classes Mark
+
+        
