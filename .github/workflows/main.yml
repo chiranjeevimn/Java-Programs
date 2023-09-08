@@ -14,6 +14,8 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11' # Specify the desired Java version
+        distribution: 'adopt'
+
     
     - name: Build and Run Java Programs
       run: |
